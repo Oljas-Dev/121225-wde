@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* General styles */
+.wrapper {
+  width: 67.5%;
+  margin: 0 auto;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  background-color: #323232;
+  border: 1px solid #323232;
+  padding: 22px 36px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: all 0.3s ease-in-out;
+
+  font-weight: 800;
+  font-size: 19px;
+  line-height: 160%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: #323232;
+}
+
+.transition-box {
+  border-radius: 16px;
+  width: 98.148%;
+  align-self: flex-start;
+  transform: translateY(calc(50% + 36px));
+}
+
+/* Header styles */
+
+.header-top {
+  display: flex;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 163%;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.date-place {
+  background-color: #323232;
+  width: 88.75%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-right: 39.8px;
+}
+
+.date-place p {
+  text-align: right;
+}
+
+.more-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff3c00;
+  width: 11.25%;
+}
+
+.more-info a {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.more-info a:hover {
+  color: #323232;
+}
+
+/* Header-content styles */
+.header-content {
+  padding-top: 231.13px;
+  padding-bottom: 36px;
+  background-image: url("./img/bg/bg-header.png");
+}
+
+.header-content h1 {
+  font-weight: 900;
+  font-size: 77px;
+  line-height: 104%;
+  text-transform: uppercase;
+  color: #212529;
+  margin-bottom: 48px;
+}
+
+.header-content-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.content-main-text-btn {
+  gap: 57.61px;
+}
+
+.main-text {
+  gap: 26.45px;
+}
+
+.main-text p {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 167%;
+  color: #212529;
+}
+
+.transition-box-header {
+  background-image: url("./img/bg/bg-transition-box.png");
+  padding: 47.5px 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.transition-box-header h2 {
+  font-weight: 900;
+  font-size: 46px;
+  line-height: 107%;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.transition-box-header a {
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 160%;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+
+  padding: 29.39px 49px;
+  background-color: #323232;
+  border: 1px solid #323232;
+  white-space: nowrap;
+}
+
+.transition-box-header a:hover {
+  color: #323232;
+  background-color: #fff;
+}
