@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/*
+    Стили применяются в зависимости от значения атрибута
+    data-theme у html
+*/
+[data-theme="light"] {
+  background-color: white;
+  color: black;
+}
+[data-theme="dark"] {
+  background-color: black;
+  color: white;
+}
