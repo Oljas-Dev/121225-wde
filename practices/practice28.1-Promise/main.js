@@ -65,3 +65,91 @@ loadOrderDetails()
      */
     console.error("Ошибка при загрузке данных заказа", error);
   });
+
+/**
+ * Пример работы Promise.any()
+ *
+ * Promise.any() возвращает первый успешный (fulfilled) промис.
+ *
+ * Важно:
+ * - игнорирует ошибки (rejected)
+ * - если ВСЕ промисы упали, тогда будет ошибка AggregateError
+ */
+// Создаем 3 промиса
+const promise1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    reject("Ошибка в promise1"); // отклоняется
+  }, 1000);
+});
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(3); // успешный результат
+  }, 2500);
+});
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(5); // тоже успешный, но позже
+  }, 2000);
+});
+/**
+ * Используем Promise.any()
+ */
+Promise.any([promise1, promise2, promise3])
+  .then((result) => {
+    /**
+     * result - это значение ПЕРВОГО успешного промиса
+     *
+     * В нашем случае:
+     * promise1 -> ошибка (игнорируется)
+     * promise2 -> первый успешный -> вернется 3
+     * promise3 -> уже не важен
+     */
+    console.log("Результат:", result); //  3
+  })
+  .catch((error) => {
+    /**
+     * Этот блок выполнится ТОЛЬКО если:
+     * все промисы завершились с ошибкой
+     *
+     * error - это AggregateError
+     */
+    console.log("Все промисы завершились с ошибкой");
+    console.log(error);
+  });
+
+/**
+ * Пример работы Promise.race()
+ *
+ * Promise.race() возвращает результат первого завершившегося промиса
+ * (не важно: успех или ошибка)
+ */
+// Промис, который выполняется быстро
+function fetchDataFast() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject("Данные загружены быстро"); // через 1 секунду
+    }, 1000);
+  });
+}
+// Промис, который выполняется медленно
+function fetchDataSlow() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Данные загружены медленно"); // через 3 секунды
+    }, 3000);
+  });
+}
+/**
+ * Используем Promise.race()
+ */
+Promise.race([fetchDataFast(), fetchDataSlow()]).then((result) => {
+  /**
+   * Вернется результат ПЕРВОГО завершившегося промиса
+   *
+   * fetchDataFast -> 1 секунда
+   * fetchDataSlow -> 3 секунды
+   *
+   * победит fetchDataFast
+   */
+  console.log(result); // 'Данные загружены быстро'
+});
