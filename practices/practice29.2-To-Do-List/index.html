@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice 29.2 To-Do List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-todo flex-direction-column-gap-16">
+      <div class="header flex-direction-column-gap-16">
+        <div class="header-info">
+          <h2>Wednesday</h2>
+          <p>3 January</p>
+        </div>
+
+        <div class="search-box">
+          <input type="text" id="search" placeholder="Search" />
+          <button id="searchBtn">
+            <img src="img/icon.svg" alt="icon-search" />
+          </button>
+        </div>
+
+        <div class="todo-list flex-direction-column-gap-16">
+          <h2>Список дел</h2>
+          <div class="tabs">
+            <button id="allTasks" class="tab active">Все</button>
+            <button id="activeTasks" class="tab">Активные</button>
+            <button id="completedTasks" class="tab">Выполненные</button>
+          </div>
+          <ul id="tasks"></ul>
+        </div>
+
+        <div class="footer">
+          <button class="addTasks-button">
+            <img src="img/edit-icon.svg" alt="edit-icon" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal hidden">
+      <div class="new-entry flex-direction-column-gap-16">
+        <hr />
+        <form id="addNewEntryForm">
+          <div class="dataEntry flex-direction-column-gap-16">
+            <input
+              type="text"
+              id="descriptionEntry"
+              placeholder="Description"
+            />
+            <input type="date" id="dataEntry" placeholder="Date" />
+            <label for="">
+              Remind me
+              <input type="checkbox" id="reminder" />
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="buttonsForm">
+            <button type="submit">Add</button>
+            <button type="reset">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
