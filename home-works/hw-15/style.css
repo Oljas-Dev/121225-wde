@@ -1,0 +1,4 @@
+.users {
+  display: flex;
+  gap: 8px;
+}
