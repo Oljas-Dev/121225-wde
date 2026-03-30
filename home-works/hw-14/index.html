@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация и авторизация</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form id="regForm">
+            <div class="inputs">
+                <div class="input-block">
+                    <label for="usernameFormReg">Имя <span>*</span></label>
+                    <input type="text" id="usernameFormReg"  placeholder="Введите имя">
+                </div>
+                <div class="input-block">
+                    <label for="phoneFormReg">Телефон <span>*</span></label>
+                    <input type="tel" id="phoneFormReg"  placeholder="Введите номер телефона">
+                </div>
+                <div class="input-block">
+                    <label for="emailFormReg">Email <span>*</span></label>
+                    <input type="email" id="emailFormReg"  placeholder="Введите email">
+                </div>
+                <div class="input-block">
+                    <label for="passwordFormReg">Пароль <span>*</span></label>
+                    <input type="password" id="passwordFormReg"  placeholder="Введите пароль">
+                </div>
+            </div>
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+        <form id="authForm">
+            <div class="inputs">
+                <div class="input-block">
+                    <label for="emailFormAuth">Email <span>*</span></label>
+                    <input type="email" id="emailFormAuth"  placeholder="Введите email">
+                </div>
+                <div class="input-block">
+                    <label for="passwordFormAuth">Пароль <span>*</span></label>
+                    <input type="password" id="passwordFormAuth"  placeholder="Введите пароль">
+                </div>
+            </div>
+            <button type="submit">Войти</button>
+        </form>
+        <p id="message"></p>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
