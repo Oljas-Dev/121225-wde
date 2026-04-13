@@ -1,0 +1,239 @@
+// Подключаем переменные и миксины
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ===== Список задач =====
+.todo-list {
+  width: 100%;
+
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: $color-text-main; // основной цвет текста
+  }
+}
+
+// ===== Табы =====
+.tabs {
+  display: flex;
+  width: 100%;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  overflow: hidden;
+  background: $color-app-bg;
+}
+
+.tab {
+  flex: 1;
+  height: 40px;
+  border: none;
+  background: $color-transparent;
+  color: $color-text-main;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+
+  // плавные анимации
+  transition: background $transition-base ease, color $transition-base ease;
+
+  // граница между табами (кроме последнего)
+  &:not(:last-child) {
+    border-right: 1px solid $color-border-light;
+  }
+
+  // hover эффект
+  &:hover {
+    background: $hover-primary-soft-2;
+  }
+
+  // активный таб
+  &.active {
+    background: $color-primary-light;
+    color: #381e72;
+  }
+}
+
+// ===== Список задач (ul#tasks) =====
+#tasks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    background: $color-surface;
+    border-radius: $radius-sm;
+    padding: 12px 14px;
+    min-height: 68px;
+
+    // анимации при наведении
+    transition: transform $transition-fast ease, box-shadow $transition-fast ease;
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: $shadow-task-hover;
+    }
+
+    &:only-child {
+      box-shadow: none;
+    }
+
+    // ===== LABEL (чекбокс + текст) =====
+    label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+
+      flex: 1;
+      min-width: 0;
+      position: relative;
+
+      // скрытый input
+      input {
+        display: none;
+
+        // когда чекбокс отмечен
+        &:checked+span {
+          background: $color-primary;
+          border-color: $color-primary;
+
+          // показываем галочку
+          &::after {
+            opacity: 1;
+          }
+        }
+
+        // зачёркиваем текст задачи
+        &:checked+span+div p:last-child {
+          text-decoration: line-through;
+          color: $color-text-done;
+        }
+      }
+
+      // кастомный чекбокс
+      span {
+        @include size(20px); // миксин размера
+
+        border: 2px solid $color-primary;
+        border-radius: 4px;
+        display: inline-block;
+        position: relative;
+        flex-shrink: 0;
+        background: $color-transparent;
+
+        transition: all $transition-base ease;
+
+        // галочка
+        &::after {
+          content: "";
+          position: absolute;
+          left: 5px;
+          top: 1px;
+          width: 5px;
+          height: 10px;
+
+          border: solid $color-white;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+
+          opacity: 0;
+          transition: opacity $transition-base ease;
+        }
+      }
+
+      // текст задачи
+      div {
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        p:first-child {
+          font-size: 12px;
+          color: $color-text-light;
+          line-height: 1.2;
+        }
+
+        p:last-child {
+          font-size: 15px;
+          color: $color-text-main;
+          line-height: 1.3;
+          word-break: break-word;
+        }
+      }
+    }
+
+    // кнопка удаления
+    button {
+      @include size(34px);
+
+      border: none;
+      border-radius: $radius-round;
+      background: $color-transparent;
+      color: $color-primary;
+
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+      flex-shrink: 0;
+
+      transition: background $transition-base ease, transform $transition-fast ease;
+
+      &:hover {
+        background: $hover-primary-soft;
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+// ===== FAB кнопка (добавить задачу) =====
+.footer {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+}
+
+.addTasks-button {
+  @include size(56px);
+  @include flex-center; // центрирование иконки
+
+  border: none;
+  border-radius: 18px;
+  background: $color-primary-light;
+
+  cursor: pointer;
+  box-shadow: $shadow-fab;
+
+  transition: transform $transition-fast ease,
+    box-shadow $transition-fast ease,
+    background $transition-base ease;
+
+  &:hover {
+    background: #c2a8ff;
+    transform: translateY(-1px);
+    box-shadow: $shadow-fab-hover;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+// ===== Адаптив (мобильные) =====
+@include mobile {
+  .todo-list h2 {
+    font-size: 22px;
+  }
+
+  .tab {
+    font-size: 12px;
+    padding: 0 4px;
+  }
+}

@@ -1,0 +1,28 @@
+// Миксин для центрирования по обеим осям во flex-контейнере
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Миксин для распределения элементов по краям flex-контейнера
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// Миксин для задания размеров
+// если $h не передан, тогда $h будет равен $w
+@mixin size($w, $h: $w) {
+    width: $w;
+    height: $h;
+}
+
+// Миксин для мобильных устройств
+// @content позволяет передавать вложенные стили
+@mixin mobile {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}

@@ -1,0 +1,12 @@
+// Наследование
+// %placeholder - это шаблонный селектор
+// Он не попадет в итоговый CSS, пока его не расширят
+
+%button-common
+    width: 50%
+    height: 100px
+    padding: 20px
+
+.button-primary
+    @extend %button-common
+    background-color: #000

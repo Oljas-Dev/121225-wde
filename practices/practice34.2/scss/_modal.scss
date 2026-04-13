@@ -1,0 +1,61 @@
+// Подключаем переменные
+@use 'variables' as *;
+
+// ===== Модальное окно (оверлей) =====
+.modal {
+  position: fixed;
+  inset: 0; // top: 0; right: 0; bottom: 0; left: 0;
+
+  background: $overlay-modal; // затемнение фона
+  backdrop-filter: blur(2px); // размытие заднего фона
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; // выравнивание снизу (как bottom sheet)
+
+  opacity: 0; // скрыто по умолчанию
+  visibility: hidden;
+  pointer-events: none; // отключаем клики
+
+  transition: opacity $transition-modal ease,
+    visibility $transition-modal ease;
+
+  z-index: 1000; // поверх всего
+
+  // состояние "открыто"
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; // включаем клики
+  }
+}
+
+// ===== Контент модалки (bottom sheet) =====
+.new-entry {
+  width: 100%;
+  max-width: 420px;
+
+  background: $color-app-bg;
+  border-radius: 28px 28px 0 0; // скругление сверху
+  padding: 12px 16px 24px;
+
+  transform: translateY(100%); // изначально скрыта (снизу)
+  transition: transform $transition-sheet ease;
+
+  box-shadow: $shadow-sheet;
+
+  // активное состояние (выезжает вверх)
+  &.active {
+    transform: translateY(0);
+  }
+
+  // декоративная "полоска" сверху (drag indicator)
+  hr {
+    width: 32px;
+    height: 4px;
+    border: none;
+    border-radius: $radius-pill;
+    background: $color-border;
+    margin: 0 auto 8px; // центрирование
+  }
+}

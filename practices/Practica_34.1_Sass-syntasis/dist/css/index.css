@@ -1,0 +1,30 @@
+@charset "UTF-8";
+/* Главный файл
+ * Он собирает все стили проекта в одном месте
+ * */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+.button-primary {
+  width: 50%;
+  height: 100px;
+  padding: 20px;
+}
+
+.button-primary {
+  background-color: #000;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+/*# sourceMappingURL=index.css.map */

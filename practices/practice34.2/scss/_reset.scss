@@ -1,0 +1,48 @@
+// Подключаем переменные без префикса
+@use 'variables' as *;
+
+// ===== Глобальный сброс =====
+* {
+  margin: 0; // убираем стандартные отступы
+  padding: 0; // убираем внутренние отступы
+  box-sizing: border-box; // корректная работа размеров (включает padding и border)
+  font-family: $font-main; // основной шрифт приложения
+}
+
+// ===== Базовые размеры =====
+html,
+body {
+  width: 100%; // ширина на весь экран
+  min-height: 100%; // минимальная высота — весь экран
+}
+
+// ===== Списки =====
+ul {
+  list-style: none; // убираем маркеры списка
+}
+
+// ===== Формы =====
+button,
+input {
+  font: inherit; // наследуем шрифт от родителя
+}
+
+// ===== Изображения =====
+img {
+  display: block; // убираем лишние отступы снизу
+  max-width: 100%; // адаптивные изображения
+}
+
+// ===== Кастомный скроллбар (WebKit: Chrome, Safari) =====
+::-webkit-scrollbar {
+  width: 8px; // ширина скроллбара
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(103, 80, 164, 0.25); // цвет "ползунка"
+  border-radius: $radius-pill; // закругление (капсула)
+}
+
+::-webkit-scrollbar-track {
+  background: $color-transparent; // фон трека (прозрачный)
+}

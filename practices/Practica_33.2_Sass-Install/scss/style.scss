@@ -1,0 +1,81 @@
+// Переменные
+
+// Шрифт для всего документа
+$font-main: Arial, Helvetica, sans-serif;
+
+// Базовый размер текста
+$font-size-base: 18px;
+
+// Основной цвет текста
+$text-color: #222;
+// Цвет ссылки
+$link-color: #0d6efd;
+$link-hover-color: #084298;
+// Цвет жирного текста
+$bold-color: #c62828;
+
+// Цвет фона страницы
+$background-color: #f4f4f4;
+
+// Цвет элементов списка
+$list-bg: #d9ecff;
+
+// Цвет границы списка
+$list-border: #4a90e2;
+
+
+// Общие стили страницы
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: $font-main;
+    font-size: $font-size-base;
+    color: $text-color;
+    background-color: $background-color;
+    padding: 20px;
+}
+
+// Стили для списка
+.custom-list {
+    background-color: $list-bg;
+    border: 2px solid $list-border;
+    padding: 20px;
+    border-radius: 10px;
+    list-style: square;
+    max-width: 400px;
+}
+
+.custom-list li {
+    margin-bottom: 10px;
+}
+
+
+// Вложенность
+main {
+    max-width: 700px;
+    margin: 0 auto;
+
+    p {
+        line-height: 1.6;
+        margin-bottom: 16px;
+
+        a {
+            color: $link-color;
+            transition: 0.3s;
+
+            &:hover {
+                color: $link-hover-color;
+            }
+        }
+
+        b {
+            color: $bold-color;
+        }
+    }
+}

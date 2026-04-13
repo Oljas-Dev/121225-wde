@@ -1,0 +1,182 @@
+// Подключаем переменные и миксины
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ===== Форма добавления новой записи =====
+#addNewEntryForm {
+  display: flex;
+  flex-direction: column; // элементы формы идут сверху вниз
+  gap: 20px; // расстояние между блоками формы
+}
+
+// ===== Блок с полями ввода =====
+.dataEntry {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  // Стили для текстового поля и поля даты
+  input[type="text"],
+  input[type="date"] {
+    width: 100%;
+    height: 56px;
+    border: 1px solid $color-border-input;
+    border-radius: $radius-xs;
+    padding: 0 14px;
+    background: $color-transparent;
+    outline: none;
+    font-size: 15px;
+    color: $color-text-main;
+
+    // плавная анимация границы и тени
+    transition: border $transition-base ease, box-shadow $transition-base ease;
+
+    // состояние focus
+    &:focus {
+      border-color: $color-primary;
+      box-shadow: 0 0 0 3px rgba(103, 80, 164, 0.12);
+    }
+  }
+
+  // Цвет placeholder у input
+  input::placeholder {
+    color: $color-text-muted;
+  }
+
+  // Стили для label с переключателем
+  label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    font-size: 15px;
+    color: $color-text-main;
+    position: relative;
+    user-select: none; // запрещаем выделение текста
+
+    // Скрываем реальный checkbox / switch
+    input {
+      display: none;
+
+      // Когда input отмечен
+      &:checked+.slider {
+        background: $color-primary-light;
+        border-color: $color-primary-light;
+
+        // Двигаем внутренний кружок вправо
+        &::before {
+          left: 24px;
+          background: $color-white;
+        }
+      }
+    }
+  }
+}
+
+// ===== Кастомный переключатель =====
+.slider {
+  width: 52px;
+  height: 32px;
+  background: #e7e0ec;
+  border-radius: $radius-pill;
+
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  border: 1px solid $color-switch-border;
+  transition: background $transition-base ease;
+
+  // Подвижный кружок внутри переключателя
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%);
+
+    width: 22px;
+    height: 22px;
+    border-radius: $radius-round;
+    background: $color-primary;
+
+    transition: left $transition-base ease, background $transition-base ease;
+  }
+}
+
+// ===== Кнопки формы =====
+.buttonsForm {
+  display: flex;
+  justify-content: flex-end; // кнопки прижаты вправо
+  gap: 8px;
+  flex-wrap: wrap; // если мало места — переносятся
+
+  button {
+    min-width: 110px;
+    height: 40px;
+    border-radius: $radius-pill;
+
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0 20px;
+
+    transition: all $transition-base ease;
+
+    // Кнопка submit
+    &[type="submit"] {
+      border: 1px solid $color-primary;
+      background: $color-primary;
+      color: $color-white;
+
+      &:hover {
+        background: $color-primary-dark;
+        border-color: $color-primary-dark;
+      }
+    }
+
+    // Кнопка reset
+    &[type="reset"] {
+      border: 1px solid $color-border;
+      background: $color-transparent;
+      color: $color-primary;
+
+      &:hover {
+        background: $hover-primary-soft-3;
+      }
+    }
+  }
+}
+
+// ===== Адаптив для мобильных устройств =====
+@include mobile {
+  body {
+    padding: 0; // убираем внешние отступы
+  }
+
+  .app-todo {
+    max-width: 100%;
+    min-height: 100vh;
+    border-radius: 0;
+    padding: 20px 14px 90px; // уменьшаем внутренние отступы
+  }
+
+  .new-entry {
+    max-width: 100%; // модалка занимает всю ширину
+  }
+
+  .header-info h2 {
+    font-size: 24px; // уменьшаем заголовок
+  }
+
+  .buttonsForm {
+    justify-content: space-between;
+
+    button {
+      flex: 1; // кнопки равномерно растягиваются
+      min-width: 0; // убираем минимальную ширину
+    }
+  }
+}

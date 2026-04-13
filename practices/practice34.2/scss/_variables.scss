@@ -1,0 +1,59 @@
+// ===== Шрифты =====
+$font-main: "Open Sans", sans-serif; // основной шрифт приложения
+
+// ===== Цвета фона =====
+$color-body-bg: #1f1f1f; // фон всей страницы
+$color-app-bg: #fef7ff; // фон основного блока приложения
+
+// ===== Основные цвета текста =====
+$color-text-main: #1d1b20; // основной текст
+$color-text-secondary: #49454f; // дополнительный текст
+$color-text-muted: #6f6b73; // приглушённый текст
+$color-text-light: #6b6670; // светлый текст
+$color-text-done: #8b8691; // текст выполненной задачи
+
+// ===== Основные акцентные цвета =====
+$color-primary: #6750a4; // основной акцентный цвет
+$color-primary-dark: #5e469e; // тёмный вариант акцентного цвета
+$color-primary-light: #d0bcff; // светлый вариант акцентного цвета
+
+// ===== Поверхности =====
+$color-surface: #f3edf7; // фон карточек / элементов
+$color-surface-2: #ece6f0; // дополнительный фон поверхностей
+
+// ===== Границы =====
+$color-border: #79747e; // основная граница
+$color-border-light: #c9c3ce; // светлая граница
+$color-border-input: #938f99; // граница input
+$color-switch-border: #cac4d0; // граница переключателя
+
+// ===== Базовые цвета =====
+$color-white: #ffffff; // белый цвет
+$color-transparent: transparent; // прозрачный цвет
+
+// ===== Тени =====
+$shadow-app: 0 12px 30px rgba(0, 0, 0, 0.18); // тень основного контейнера
+$shadow-task-hover: 0 4px 10px rgba(103, 80, 164, 0.08); // тень карточки задачи при hover
+$shadow-fab: 0 4px 10px rgba(103, 80, 164, 0.18); // тень плавающей кнопки
+$shadow-fab-hover: 0 8px 18px rgba(103, 80, 164, 0.2); // тень плавающей кнопки при hover
+$shadow-sheet: 0 -8px 30px rgba(0, 0, 0, 0.15); // тень выезжающей панели / sheet
+
+// ===== Полупрозрачные слои и hover-эффекты =====
+$overlay-modal: rgba(29, 27, 32, 0.32); // затемнение фона под модальным окном
+$hover-primary-soft: rgba(103, 80, 164, 0.08); // мягкий hover-эффект
+$hover-primary-soft-2: rgba(103, 80, 164, 0.07); // ещё более мягкий hover
+$hover-primary-soft-3: rgba(103, 80, 164, 0.06); // самый лёгкий hover
+
+// ===== Скругления =====
+$radius-xs: 4px; // очень маленькое скругление
+$radius-sm: 18px; // маленькое скругление
+$radius-md: 24px; // среднее скругление
+$radius-lg: 28px; // большое скругление
+$radius-round: 50%; // круглая форма
+$radius-pill: 999px; // форма "капсулы"
+
+// ===== Анимации и переходы =====
+$transition-fast: 0.15s ease; // быстрый переход
+$transition-base: 0.2s ease; // стандартный переход
+$transition-modal: 0.25s ease; // анимация модального окна
+$transition-sheet: 0.28s ease; // анимация выезжающей панели

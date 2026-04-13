@@ -1,0 +1,18 @@
+// Миксины
+    // Миксин - это переиспользуемый набор CSS-свойств
+        // Подключается через @include
+
+// Миксин 1
+@mixin vertical-flex()
+    display: flex
+    flex-direction: column
+    gap: 20px
+    align-items: center
+    
+
+// Миксин 1 c параметрами
+@mixin vertical-flex($direction: row, $gap: 20px)
+    display: flex
+    flex-direction: $direction
+    gap: $gap
+    align-items: center

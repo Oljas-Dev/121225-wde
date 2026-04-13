@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проект todo-лист</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="app-todo flex-direction-column-gap-16">
+        <div class="header flex-direction-column-gap-16">
+            <div class="header-info">
+                <h2>Среда</h2>
+                <p>3 января</p>
+            </div>
+
+            <div class="search-box">
+                <input type="text" id="search" placeholder="Поиск">
+                <button id="searchBtn">
+                    <img src="img/icon-search.svg" alt="icon-search">
+                </button>
+            </div>
+        </div>
+
+        <div class="todo-list flex-direction-column-gap-16">
+            <h2>Список дел</h2>
+            <div class="tabs">
+                <button id="allTasks" class="tab active">Все</button>
+                <button id="activeTasks" class="tab">Активные</button>
+                <button id="completedTasks" class="tab">Выполненные</button>
+            </div>
+            <ul id="tasks"></ul>
+        </div>
+
+        <div class="footer">
+            <button class="addTasks-button">
+                <img src="img/icon-pencil.svg" alt="icon-pencil">
+            </button>
+        </div>
+
+        <div class="modal hidden">
+            <div class="new-entry flex-direction-column-gap-16">
+                <hr>
+                <form id="addNewEntryForm">
+                    <div class="dataEntry flex-direction-column-gap-16">
+                        <input type="text" id="descriptionEntry" placeholder="Описание">
+                        <input type="date" id="dataEntry" placeholder="Дата">
+                        <label>
+                            Напомни мне
+                            <input type="checkbox" id="reminder">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="buttonsForm">
+                        <button type="submit">Добавить</button>
+                        <button type="reset">Отмена</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>

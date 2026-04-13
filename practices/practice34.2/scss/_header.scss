@@ -1,0 +1,80 @@
+// Подключаем переменные и миксины
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ===== Header =====
+.header {
+  width: 100%; // растягиваем на всю ширину
+}
+
+// ===== Блок с информацией (заголовок + подпись) =====
+.header-info {
+  display: flex;
+  flex-direction: column; // вертикальное расположение
+  gap: 4px; // расстояние между элементами
+
+  h2 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: $color-text-main; // основной цвет текста
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 400;
+    color: $color-text-secondary; // вторичный текст
+  }
+}
+
+// ===== Поисковая строка =====
+.search-box {
+  width: 100%;
+  height: 48px;
+
+  background: $color-surface-2; // фон поля
+  border-radius: $radius-md;
+
+  display: flex;
+  align-items: center; // выравнивание по вертикали
+
+  padding: 0 8px 0 16px; // отступы внутри
+  gap: 8px;
+
+  // ===== Поле ввода =====
+  input {
+    flex: 1; // занимает всё доступное пространство
+    height: 100%;
+
+    border: none;
+    background: $color-transparent;
+    outline: none; // убираем стандартный outline
+
+    font-size: 15px;
+    color: $color-text-main;
+
+    // placeholder
+    &::placeholder {
+      color: $color-text-muted;
+    }
+  }
+
+  // ===== Кнопка поиска =====
+  button {
+    @include size(40px); // квадрат 40x40
+    @include flex-center; // центрирование иконки
+
+    border: none;
+    background-color: $color-transparent;
+    border-radius: $radius-round;
+
+    cursor: pointer;
+
+    transition: background-color $transition-base ease;
+
+    // hover эффект
+    &:hover {
+      background: $hover-primary-soft;
+    }
+  }
+}

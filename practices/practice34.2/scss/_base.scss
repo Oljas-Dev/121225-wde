@@ -1,0 +1,14 @@
+// Подключаем переменные
+@use 'variables' as *;
+
+// ===== Базовые стили страницы =====
+body {
+  background: $color-body-bg; // цвет фона всей страницы
+  color: $color-text-main; // основной цвет текста
+
+  display: flex; // используем flex для центрирования контента
+  justify-content: center; // центр по горизонтали
+  align-items: flex-start; // прижимаем контент к верху
+
+  padding: 20px; // отступы от краёв экрана
+}
