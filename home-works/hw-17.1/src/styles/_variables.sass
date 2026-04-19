@@ -1,0 +1,12 @@
+@use 'mixins'
+$container-width: 960px;
+
+.container
+  @include mixins.flex-center();
+  width: $container-width;
+  height: 100px;
+  background-color: grey;
+  margin: 0 auto;
+
+  @media (max-width: 768px) 
+    width: 100%;
