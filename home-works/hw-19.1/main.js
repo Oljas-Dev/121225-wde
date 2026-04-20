@@ -2,7 +2,7 @@ const multyColorBox = document.getElementById("multyColorBox");
 
 const colors = ["#ff0000", "#00ff00", "#0000ff"];
 const text = ["I ", "am ", "disco", "🕺"];
-let emptyString = "";
+let str = "";
 let count = 0;
 
 function randomNumber(countCeil) {
@@ -21,9 +21,9 @@ function showText() {
     return;
   }
 
-  emptyString = emptyString + text[count];
+  str = str + text[count];
   count++;
-  multyColorBox.textContent = emptyString;
+  multyColorBox.textContent = str;
 
   setTimeout(showText, 1000);
 }
