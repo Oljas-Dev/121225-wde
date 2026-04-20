@@ -1,8 +1,8 @@
 class CopyEntity {
-  static copyObject(obj) {
+  static copyObject(obj, name) {
     const newObj = obj;
     if (obj.name) {
-      newObj.name = "Oljas";
+      newObj.name = name;
     }
     console.log(newObj);
 
@@ -16,4 +16,4 @@ const testObject = {
   hobby: ["music", "art"],
 };
 
-CopyEntity.copyObject(testObject);
+CopyEntity.copyObject(testObject, "Oljas");
