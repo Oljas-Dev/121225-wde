@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.triggers {
+  display: flex;
+  gap: 20px;
+}
+.triggers button {
+  width: 50px;
+  height: 40px;
+  font-size: 24px;
+  cursor: pointer;
+}
