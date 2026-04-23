@@ -1,0 +1,15 @@
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  /* Анимация появления заднего фона */
+  animation: backdropFade 0.35s ease;
+}
+
+@keyframes backdropFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

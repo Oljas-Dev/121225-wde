@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Практика 40.2</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Основная кнопка открытия модального окна -->
+    <button id="openButton" class="open-button">Открыть модальное окно</button>
+    <!-- 
+        Нативное модальное окно через встроенный тег dialog
+        Важно:
+        dialog сам умеет открываться, как модальное окно с помощью метода showModal()
+        и закрываться через close().
+    -->
+    <dialog id="modal" class="modal">
+      <!-- 
+            Обертка для содержимого модального окна
+            Нужна для того, чтобы удобно стилизовать внутреннюю часть
+        -->
+      <div class="modal-content">
+        <!-- Верхняя часть окна -->
+        <div class="modal-header">
+          <h2>Модальное окно</h2>
+          <!-- Кнопка закрытия -->
+          <button id="closeButton" class="close-btn" aria-label="Закрыть окно">
+            &#10007;
+          </button>
+        </div>
+        <!-- Основной контент модального окна -->
+        <div class="modal-body">
+          <p>
+            Это пример модального окна, созданного с помощью тега
+            <strong>dialog</strong>
+          </p>
+          <p>
+            Мы используем градиентный фон, тень, анимацию появления и затемнение
+            заднего фона через <code>::backdrop</code>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button id="footerCloseButton" class="footer-btn">Закрыть</button>
+        </div>
+      </div>
+
+      <!-- method="dialog" - это особый режим формы -->
+      <!-- Важно:
+            - форма не отправляется на сервер 
+         -->
+      <form method="dialog">
+        <!-- Если пользователь нажимает эту кнопку,
+                окно закроется, а dialog.returnValue станет "cancel" 
+            -->
+        <button value="cancel" class="btn cancel-btn">Нет</button>
+        <button value="confirm" class="btn confirm-btn">Да, удалить</button>
+      </form>
+    </dialog>
+
+    <p id="result"></p>
+    <script src="main.js"></script>
+  </body>
+</html>

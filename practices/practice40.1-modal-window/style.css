@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* В качестве примера (можно удалить) */
+/* #modal{
+    display: grid;
+} */
+
+.modal {
+    position: fixed;
+    /* Используем fixed, чтобы окно не уезжало при скролле */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    /* Центрирование контента */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal--hidden {
+    display: none;
+}
+
+.modal-body {
+    width: 50%;
+    height: 50%;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
