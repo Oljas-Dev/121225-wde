@@ -6,6 +6,7 @@ const left_trigger = document.querySelector(".left");
 const right_trigger = document.querySelector(".right");
 // Глобальная переменная для хранения текущего id поста
 let post_number = 5;
+let total_posts = 0;
 
 // Функция отрисовки поста
 function createPost(title, body) {
@@ -67,16 +68,49 @@ async function loadPost() {
   }
 }
 
-loadPost();
-
-left_trigger.addEventListener("click", () => {
+left_trigger.addEventListener("click", async () => {
   if (post_number <= 1) return;
   post_number--;
-  loadPost();
+  await loadPost();
+  updateButtons();
+  console.log(post_number);
 });
 
-right_trigger.addEventListener("click", () => {
-  if (post_number >= 100) return;
-  post_number++;
-  loadPost();
+right_trigger.addEventListener("click", async () => {
+  if (post_number < total_posts) {
+    post_number++;
+    await loadPost();
+    updateButtons();
+    console.log(post_number);
+  }
 });
+
+async function fetchPostsCount() {
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts/");
+
+    if (!response.ok) {
+      throw new Error("Ошибка при получении списка постов");
+    }
+
+    const data = await response.json();
+
+    total_posts = data.length;
+  } catch (error) {
+    console.error(error.message);
+    total_posts = 0;
+  }
+}
+
+function updateButtons() {
+  left_trigger.disabled = post_number === 1;
+  right_trigger.disabled = post_number === total_posts;
+}
+
+async function init() {
+  await fetchPostsCount();
+  await loadPost();
+  updateButtons();
+}
+
+init();
