@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice 42.1</title>
+    <link
+rel="stylesheet"
+href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
+/>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Верхняя навигационная панель -->
+    <nav class="navbar">
+        <!-- Кнопка открытия меню -->
+        <button id="openButton" class="icon-button" aria-label="Открыть меню">
+            <span class="material-symbols-rounded">menu</span>
+        </button>
+        <h1 class="navbar__title">Мой веб-сайт</h1>
+    </nav>
+
+    <!-- Затемнение фона при открытом меню -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Боковое меню -->
+    <aside id="navMenu" class="nav-menu">
+        <!-- Верхняя часть меню -->
+        <div class="nav-menu__header">
+            <h2 class="nav-menu__title">Меню</h2>
+            <!-- Кнопка закрытия меню -->
+            <button id="closeButton" class="icon-button" aria-label="Закрыть меню">
+                <span class="material-symbols-rounded">cancel</span>
+            </button>
+        </div>
+        <a href="#" class="nav-menu__item">
+            <span class="material-symbols-rounded">home</span>
+            Главная
+        </a>
+        <a href="#" class="nav-menu__item">
+            <span class="material-symbols-rounded">person</span>
+            Профиль
+        </a>
+        <a href="#" class="nav-menu__item">
+            <span class="material-symbols-rounded">settings</span>
+            Настройки
+        </a>
+        <a href="#" class="nav-menu__item">
+            <span class="material-symbols-rounded">mail</span>
+            Контакты
+        </a>
+    </aside>
+
+    <!-- Основной контент страницы -->
+     <main class="content">
+        <h2>Анимированное навигационное меню</h2>
+        <p>
+            Нажми на кнопку меню в верхнем левом углу, чтобы открыть боковую панель.
+            Меню плавно выезжает из левого края экрана с помощью CSS-свойства
+            <code>transform: translateX()</code>
+        </p>
+     </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
+    <script src="main.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,17 @@
+@use "variables";
+
+@mixin main-btn(
+  $px: 16px,
+  $background: variables.$background-btn,
+  $color: white
+) {
+  background-color: $background;
+  color: $color;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: $px;
+  padding-right: $px;
+
+  border-radius: 8px;
+  max-width: fit-content;
+}

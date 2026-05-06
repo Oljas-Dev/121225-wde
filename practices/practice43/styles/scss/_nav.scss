@@ -1,0 +1,87 @@
+@use "variables";
+@use "mixins";
+
+// navigation styles
+.nav {
+  align-items: center;
+  padding: 12px 24px;
+
+  &__inputs {
+    font-size: 16px;
+    gap: 40px;
+
+    input {
+      font-size: inherit;
+      width: 300px;
+      border: 1px solid variables.$gray-borders;
+    }
+
+    button {
+      padding: 0 13px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+    }
+  }
+
+  &__input-left {
+    padding: 13px 0 13px 37px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+
+  &__input-right {
+    font-size: inherit;
+    padding: 13px 0 13px 17px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-left: none !important;
+  }
+
+  &__left-search-btn {
+    background-color: transparent;
+
+    svg {
+      color: variables.$gray-text;
+    }
+  }
+
+  &__right-search-btn {
+    background-color: variables.$search-btn;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+    right: -35px;
+    svg {
+      color: white;
+    }
+  }
+
+  &__options {
+    align-items: center;
+    gap: 22px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+
+    &-languages {
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    &__btn {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0%;
+    }
+
+    a {
+      color: inherit;
+    }
+  }
+}

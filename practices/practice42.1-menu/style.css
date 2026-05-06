@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  background: linear-gradient(90deg, #4fc3f7, #9575cd);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 60px;
+}
+
+.navbar__title {
+}
+
+.icon-button {
+  width: 42px;
+  height: 42px;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* transition: transform 0.2s ease, background-color 0.2s ease; */
+  transition: all 0.2s ease;
+}
+
+.icon-button:hover {
+  background-color: #eee;
+  transform: scale(1.08);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  /* По-умолчанию затемнение скрыто  */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 5;
+}
+/* "Активное" затемнение */
+.overlay--active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-menu {
+  width: 320px;
+  max-width: 85%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, #fff3e0, #f8bbd0);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* В закрытом состоянии меню сдвинуто влево
+    на 100% своей ширины */
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+  z-index: 10;
+}
+
+.nav-menu--open {
+  transform: translateX(0);
+  box-shadow: 6px 0 18px rgba(0, 0, 0, 0.35);
+}
+
+.nav-menu__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.nav-menu__item {
+  text-decoration: none;
+  color: #222;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px;
+  transition: all 0.3s;
+}
+
+.nav-menu__item:hover {
+  color: #22222261;
+}

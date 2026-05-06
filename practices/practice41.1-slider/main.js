@@ -82,5 +82,39 @@ function updateActiveRound() {
   const rounds = document.querySelectorAll(".rounds button");
 }
 
+// Функция для переключения на предыдущий слайд
+function goLeft() {
+  if (sliderIndex === 0) {
+    sliderIndex = images.length - 1;
+  } else {
+    sliderIndex--;
+  }
+  updateSliderPosition();
+}
+
+// Функция для переключения на следующий слайд
+function goRight() {
+  if (sliderIndex === images.length - 1) {
+    sliderIndex = 0;
+  } else {
+    sliderIndex++;
+  }
+}
+
+rightBtn.addEventListener("click", goRight); //без скобочек для функции
+leftBtn.addEventListener("click", goLeft);
+
+/**
+ * Обработчик событий для навигации с помощью клавиатуры.
+ */
+document.addEventListener("keydown", (event) => {
+  console.log(event.key);
+  if (event.key === "ArrowLeft") {
+    goLeft();
+  } else if (event.key === "ArrowRight") {
+    goRight();
+  }
+});
+
 // Добавляем готовый слайдер в корневой элемент DOM
 root.append(frame);

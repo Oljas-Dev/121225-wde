@@ -1,0 +1,46 @@
+// sass --watch styles.scss:../css/styles.css
+
+@use "variables";
+@use "mixins";
+@use "nav";
+@use "common";
+@use "header";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Roboto", sans-serif;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+h1 {
+  font-size: variables.$h1-size;
+  font-weight: 700;
+  font-style: Bold;
+  line-height: 52px;
+  letter-spacing: 0%;
+}
+
+p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+}
+
+.applayout {
+  width: 80%;
+  margin: 0 auto;
+  padding: 70px 0 100px 0;
+}
+
+.btn {
+  @include mixins.main-btn;
+}
