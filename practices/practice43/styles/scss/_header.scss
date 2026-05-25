@@ -1,6 +1,9 @@
 .header {
   display: grid;
   grid-template-columns: 60% 40%;
+  gap: 4.615rem;
+  padding: 70px 0 100px 0;
+
   &__info {
     gap: 24px;
   }

@@ -1,17 +1,25 @@
 @use "variables";
 
+// General mixin for buttons
 @mixin main-btn(
-  $px: 16px,
+  $px: 1.6rem,
   $background: variables.$background-btn,
   $color: white
 ) {
   background-color: $background;
   color: $color;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
   padding-left: $px;
   padding-right: $px;
 
-  border-radius: 8px;
+  border-radius: 0.8rem;
   max-width: fit-content;
+}
+
+// BLocks with light blue background
+@mixin light-blue-block($p: 0.8rem) {
+  background-color: variables.$region-bg;
+  padding: $p;
+  border-radius: 0.8rem;
 }

@@ -4,84 +4,90 @@
 // navigation styles
 .nav {
   align-items: center;
-  padding: 12px 24px;
+  padding: 1.2rem 2.4rem;
 
   &__inputs {
-    font-size: 16px;
-    gap: 40px;
+    font-size: 1.6rem;
+    gap: 4rem;
 
-    input {
-      font-size: inherit;
-      width: 300px;
-      border: 1px solid variables.$gray-borders;
-    }
-
-    button {
-      padding: 0 13px;
+    &-magnifier-left {
+      width: 2.2rem;
       position: absolute;
       top: 0;
-      bottom: 0;
+      left: 1rem;
+      transform: translateY(50%);
     }
+
+    input {
+      font-size: 1.6rem;
+      width: 30rem;
+      border: 1px solid variables.$gray-borders;
+    }
+  }
+
+  &__inputs-container-600 {
+    display: none;
   }
 
   &__input-left {
-    padding: 13px 0 13px 37px;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+    padding: 1.3rem 0 1.3rem 3.7rem;
+    border-top-left-radius: 0.8rem;
+    border-bottom-left-radius: 0.8rem;
   }
 
   &__input-right {
-    font-size: inherit;
-    padding: 13px 0 13px 17px;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+    padding: 1.3rem 0 1.3rem 1.7rem;
+    border-top-right-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
     border-left: none !important;
   }
 
-  &__left-search-btn {
-    background-color: transparent;
-
-    svg {
-      color: variables.$gray-text;
-    }
-  }
-
   &__right-search-btn {
+    font-size: 1.6rem;
+    padding: 0 1.3rem;
+    position: absolute;
     background-color: variables.$search-btn;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border-top-right-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
 
-    right: -35px;
-    svg {
-      color: white;
+    height: 100%;
+    right: 0;
+
+    &:hover {
+      transform: none;
     }
   }
 
-  &__options {
+  &__options,
+  &__options-600 {
     align-items: center;
-    gap: 22px;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0%;
-    text-align: center;
-    vertical-align: middle;
+    gap: 2.2rem;
 
     &-languages {
       align-items: center;
-      gap: 4px;
+      gap: 0.4rem;
       cursor: pointer;
     }
 
-    &__btn {
+    a,
+    span {
       font-weight: 500;
-      font-size: 14px;
-      line-height: 20px;
+      font-size: 1.4rem;
+      line-height: 2rem;
       letter-spacing: 0%;
-    }
-
-    a {
+      text-align: center;
       color: inherit;
     }
+  }
+
+  &__btn {
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    letter-spacing: 0%;
+  }
+
+  &__options-600 {
+    display: none;
   }
 }

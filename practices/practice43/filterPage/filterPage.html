@@ -4,10 +4,308 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Join Meetup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./../styles/css/styles.css" />
   </head>
   <body>
-    <h2>Filter Page</h2>
-    <a href="./../index.html">home page</a>
+    <!-- navigation -->
+    <nav class="nav flex justify-between">
+      <div class="nav__inputs flex relative">
+        <a href="./../index.html">
+          <img
+            src="./../img/logo.svg"
+            alt="website logo"
+            class="nav__search-icon-left"
+          />
+        </a>
+
+        <!-- elements after 600px -->
+        <div class="nav__inputs-container flex relative">
+          <img
+            src="./../img/search_nav_left.svg"
+            alt="search icon"
+            class="nav__inputs-magnifier-left"
+          />
+          <input
+            id="nav-input-left"
+            class="nav__input-left"
+            type="search"
+            placeholder="Search events"
+          />
+          <input
+            id="nav-input-right"
+            class="nav__input-right"
+            type="search"
+            placeholder="find your city"
+            value="Mountain View, CA"
+          />
+          <button class="nav__right-search-btn">
+            <img src="./../img/search_nav.svg" alt="search button icon" />
+          </button>
+        </div>
+
+        <!-- elements before 600px -->
+        <div class="nav__options-600">
+          <span class="nav__options-languages flex">
+            <img src="./../img/globe.svg" alt="globe icon" />
+            <span id="choose-language-600"></span>
+          </span>
+          <a href="#">Log in</a>
+          <button type="button" class="btn nav__btn">Sign up</button>
+        </div>
+      </div>
+
+      <!-- elements after 600px -->
+      <div class="nav__options flex">
+        <span class="nav__options-languages flex">
+          <img src="./../img/globe.svg" alt="globe icon" />
+          <span id="choose-language"></span>
+        </span>
+        <a href="#">Log in</a>
+        <button type="button" class="btn nav__btn">Sign up</button>
+      </div>
+
+      <div class="nav__inputs-container-600 relative">
+        <img
+          src="./../img/search_nav_left.svg"
+          alt="search icon"
+          class="nav__inputs-magnifier-left"
+        />
+        <input
+          id="nav-input-left-600"
+          class="nav__input-left"
+          type="search"
+          placeholder="Search events"
+        />
+        <button class="nav__right-search-btn">
+          <img src="./../img/search_nav.svg" alt="search button icon" />
+        </button>
+      </div>
+    </nav>
+
+    <div class="filterPage">
+      <main class="filterPage__applayout">
+        <article class="filterPage__main-column flex flex-col">
+          <!-- Main column of a main section -->
+          <div class="filterPage__main-column-heading flex flex-col">
+            <div class="filterPage__main-column-heading-flex flex flex-col">
+              <h2>Events near New York, NY</h2>
+              <p>Events</p>
+            </div>
+
+            <!-- Filter options for events -->
+            <div class="filterPage__main-column-heading-selects-wrapper flex">
+              <div class="filterPage__main-column-heading-select-wrapper">
+                <select id="date">
+                  <option value="">any time</option>
+                  <option value="Mar 13, 11:00 AM">Mar 13, 11:00 AM</option>
+                  <option value="Mar 14, 11:00 AM">Mar 14, 11:00 AM</option>
+                  <option value="Mar 23, 3:00 PM">Mar 23, 3:00 PM</option>
+                  <option value="Mar 16, 2:00 PM">Mar 16, 2:00 PM</option>
+                  <option value="Mar 23, 11:30 AM">Mar 23, 11:30 AM</option>
+                  <option value="Mar 30, 2:00 PM">Mar 30, 2:00 PM</option>
+                </select>
+              </div>
+
+              <div class="filterPage__main-column-heading-select-wrapper">
+                <select id="type">
+                  <option value="">any type</option>
+                  <option value="online">Online</option>
+                  <option value="offline">Offline</option>
+                </select>
+              </div>
+
+              <div class="filterPage__main-column-heading-select-wrapper">
+                <select id="distance">
+                  <option value="">any distance</option>
+                  <option value="5">5 km</option>
+                  <option value="10">10 km</option>
+                  <option value="15">15 km</option>
+                  <option value="25">25 km</option>
+                  <option value="50">50 km</option>
+                  <option value="75">75 km</option>
+                  <option value="100">100 km</option>
+                </select>
+              </div>
+
+              <div class="filterPage__main-column-heading-select-wrapper">
+                <select id="category" class="filterPage-select">
+                  <option value="">any category</option>
+                  <option value="Social Activities">Social Activities</option>
+                  <option value="Hobbies and Passions">
+                    Hobbies and Passions
+                  </option>
+                  <option value="Health and Wellbeing">
+                    Health and Wellbeing
+                  </option>
+                  <option value="Business">Business</option>
+                  <option value="Technology">Technology</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- in this div all filtered data will be rendered -->
+          <div id="filteredData" class="filterPage__filtered__data"></div>
+        </article>
+      </main>
+
+      <aside class="filterPage__aside flex flex-col">
+        <!-- aside heading -->
+        <div>
+          <p>Find events near</p>
+          <h2>New York, NY</h2>
+        </div>
+
+        <!-- aside map picture -->
+        <div class="filterPage__aside-map-container flex flex-col">
+          <!-- button to close picture -->
+          <button class="filterPage__aside-map-close-btn">
+            <img src="./../img/filterPage/close.svg" alt="close button" />
+          </button>
+
+          <!-- button to open dialog with map -->
+          <button class="filterPage__aside-map-btn flex">
+            Browse in map
+            <img src="./../img/filterPage/btn_icon.svg" alt="open map button" />
+          </button>
+        </div>
+      </aside>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer flex flex-col">
+      <!-- heading -->
+      <div class="footer__heading flex">
+        <h3>Create your own Meetup group.</h3>
+        <button class="footer__heading-btn">Get Started</button>
+      </div>
+      <!-- footer main -->
+
+      <div class="footer__main">
+        <ul class="flex flex-col">
+          <h3>Your Account</h3>
+          <li>
+            <a href="#">Sign up</a>
+          </li>
+          <li>
+            <a href="#">Log in</a>
+          </li>
+          <li>
+            <a href="#">Help</a>
+          </li>
+          <li>
+            <a href="#">Become an Affiliate</a>
+          </li>
+        </ul>
+        <div>
+          <ul class="flex flex-col">
+            <h3>Discover</h3>
+            <li>
+              <a href="#">Groups</a>
+            </li>
+            <li>
+              <a href="#">Calendar</a>
+            </li>
+            <li>
+              <a href="#">Topics</a>
+            </li>
+            <li>
+              <a href="#">Cities</a>
+            </li>
+            <li>
+              <a href="#">Online Events</a>
+            </li>
+            <li>
+              <a href="#">Local Guides</a>
+            </li>
+            <li>
+              <a href="#">Make Friends</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul class="flex flex-col">
+            <h3>Meetup</h3>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Blog</a>
+            </li>
+            <li>
+              <a href="#">Meetup Pro</a>
+            </li>
+            <li>
+              <a href="#">Careers</a>
+            </li>
+            <li>
+              <a href="#">Apps</a>
+            </li>
+            <li>
+              <a href="#">Podcast</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- social links -->
+      <div class="footer__links flex">
+        <div class="footer__links-nets-container flex flex-col">
+          <h3>Follow us</h3>
+          <div class="footer__links-nets flex">
+            <a href="#">
+              <img
+                src="./../img/social_nets/facebook.svg"
+                alt="facebook icon"
+              />
+            </a>
+
+            <a href="#">
+              <img src="./../img/social_nets/twitter.svg" alt="twitter icon" />
+            </a>
+
+            <a href="#">
+              <img src="./../img/social_nets/utube.svg" alt="youtube icon" />
+            </a>
+
+            <a href="#">
+              <img
+                src="./../img/social_nets/instagram.svg"
+                alt="instagram icon"
+              />
+            </a>
+
+            <a href="#">
+              <img src="./../img/social_nets/tiktok.svg" alt="tiktok icon" />
+            </a>
+          </div>
+        </div>
+
+        <!-- online stores -->
+        <div class="footer__links-stores flex">
+          <a href="#">
+            <img
+              src="./../img/social_nets/google_store.svg"
+              alt="google store icon"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="./../img/social_nets/apple_store.svg"
+              alt="apple store icon"
+            />
+          </a>
+        </div>
+      </div>
+    </footer>
+
     <script type="module" src="filterPage.js"></script>
+    <script src="./../main.js"></script>
   </body>
 </html>

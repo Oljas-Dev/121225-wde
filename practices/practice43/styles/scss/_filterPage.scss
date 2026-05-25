@@ -1,0 +1,177 @@
+@use "variables";
+
+.filterPage {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  margin-top: 7.7rem;
+  margin-bottom: 10.1rem;
+
+  // main column styles
+  &__applayout {
+    width: 80%;
+    max-width: 151.2rem;
+    margin: 0 auto;
+  }
+
+  &__main-column {
+    gap: 3.4rem;
+
+    &-heading {
+      gap: 1.2rem;
+
+      &-flex {
+        gap: 1.6rem;
+      }
+      &-selects-wrapper {
+        gap: 1.75rem;
+        padding: 0 0 1.6rem;
+        overflow: auto;
+      }
+
+      &-select-wrapper {
+        background-color: variables.$footer-headings;
+        border-radius: 4rem;
+        padding: 1.6rem;
+      }
+      h2 {
+        font-weight: 600;
+        font-size: 2.8rem;
+        line-height: 3.6rem;
+        letter-spacing: 0%;
+      }
+      p {
+        width: fit-content;
+        font-weight: 500;
+        font-size: 2rem;
+        line-height: 2.8rem;
+        letter-spacing: 0%;
+        color: variables.$background-btn;
+
+        border-bottom: 4px solid variables.$background-btn;
+      }
+    }
+  }
+
+  &__filtered__data {
+    &-container {
+      gap: 1.2rem;
+      border-top: 1px solid variables.$gray-borders;
+      padding-top: 1.6rem;
+
+      img {
+        width: 15.911rem;
+        height: 10.5rem;
+      }
+    }
+
+    &-info {
+      gap: 0.4rem;
+
+      &-container {
+        gap: 4.8rem;
+        margin-bottom: 1.3rem;
+      }
+
+      &-date {
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 2rem;
+        letter-spacing: -0.35px;
+        text-transform: uppercase;
+        color: rgba(124, 111, 80, 1) !important;
+      }
+
+      &-tag {
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 2rem;
+        letter-spacing: 0%;
+        color: rgba(112, 112, 112, 1);
+      }
+
+      &-attendees {
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 2rem;
+        letter-spacing: 0%;
+        color: variables.$footer-border;
+      }
+
+      h2 {
+        font-family: Roboto;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        letter-spacing: 0%;
+      }
+    }
+  }
+
+  select {
+    background-color: variables.$footer-headings;
+    border: none;
+  }
+
+  select,
+  option {
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+
+  // aside styles
+  &__aside {
+    gap: 1.4rem;
+
+    p {
+      font-weight: 500;
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+      letter-spacing: 0%;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      line-height: 2.8rem;
+      letter-spacing: 0%;
+    }
+    &-map {
+      &-container {
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        width: 35rem;
+        height: 28.5rem;
+
+        background-image: url("./../../img/filterPage/map.png");
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 1.2rem;
+      }
+
+      &-btn {
+        gap: 0.779rem;
+        align-items: center;
+        padding: 0.8rem 1.158rem 1.158rem 2.4rem;
+        border: 2px solid variables.$background-btn;
+        border-radius: 0.8rem;
+
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 2rem;
+        letter-spacing: 0%;
+        color: variables.$background-btn;
+      }
+
+      &-close-btn {
+        position: absolute;
+        top: 11px;
+        right: 15px;
+      }
+    }
+  }
+}

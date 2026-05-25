@@ -2,9 +2,15 @@
 
 @use "variables";
 @use "mixins";
-@use "nav";
 @use "common";
+@use "nav";
 @use "header";
+@use "events-near";
+@use "upcoming-events";
+@use "join-meetup";
+@use "footer";
+@use "filterPage";
+@use "media";
 
 * {
   margin: 0;
@@ -13,32 +19,63 @@
   text-decoration: none;
   list-style: none;
   font-family: "Roboto", sans-serif;
+  font-size: 62.5%;
+  transition:
+    transform 0.4s ease,
+    color 0.2s ease;
 }
 
 button {
+  font-size: 1.6rem;
   cursor: pointer;
   border: none;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
 }
 
 h1 {
   font-size: variables.$h1-size;
   font-weight: 700;
-  font-style: Bold;
-  line-height: 52px;
+  line-height: 5.2rem;
+  letter-spacing: 0%;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+  letter-spacing: 0%;
+}
+
+h3 {
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 20px;
+  line-height: 24px;
   letter-spacing: 0%;
 }
 
 p {
   font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
   letter-spacing: 0%;
 }
 
 .applayout {
   width: 80%;
+  max-width: 151.2rem;
   margin: 0 auto;
-  padding: 70px 0 100px 0;
 }
 
 .btn {

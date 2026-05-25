@@ -1,0 +1,211 @@
+@use "variables";
+
+@media only screen and (max-width: 1400px) {
+  html {
+    font-size: 56.25%;
+  }
+  .join-meetup__heading img {
+    width: 23.8rem;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .events__cards-container {
+    // grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .join-meetup__cities-cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .join-meetup__heading img {
+    width: 23.8rem;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .join-meetup__friendships-cards-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+  }
+
+  .join-meetup__categories-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .filterPage {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+
+    &__aside {
+      margin: 0 auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .nav__input-right {
+    display: none;
+  }
+  .nav__right-search-btn {
+    right: -4.3rem;
+  }
+
+  .header {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0;
+    margin-bottom: 2.04rem;
+
+    &__image {
+      text-align: center;
+    }
+  }
+
+  .join-meetup__functions-cards-container {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .applayout {
+    width: 90% !important;
+  }
+
+  .footer {
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .join-meetup__heading {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .join-meetup__heading-info {
+    align-items: center;
+    padding: 0;
+  }
+
+  .join-meetup__heading-img-800 {
+    display: block;
+  }
+
+  .join-meetup__heading-img {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  html {
+    font-size: 46%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.1rem;
+
+    &__inputs {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    &__inputs-container,
+    &__options {
+      display: none;
+    }
+
+    &__options-600 {
+      display: flex;
+    }
+
+    &__inputs-container-600 {
+      display: flex;
+      align-self: flex-start;
+      width: 90%;
+      input {
+        font-size: 1.6rem;
+        width: 100%;
+        border: 1px solid variables.$gray-borders;
+      }
+    }
+  }
+
+  .header__image {
+    img {
+      width: 33rem;
+    }
+  }
+
+  .join-meetup__cities-cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+  }
+
+  .join-meetup__categories-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.1rem 2.3rem;
+  }
+
+  .join-meetup__categories-card {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .events__cards-container {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+    gap: 3rem;
+  }
+
+  .header__image {
+    img {
+      width: 21.491rem;
+    }
+  }
+
+  .events__card {
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 3rem;
+
+    &-main-img {
+      width: 97.51px;
+      height: 54.99px;
+    }
+
+    &-info-container {
+      flex-grow: 1;
+    }
+  }
+
+  .footer,
+  .join-meetup__heading {
+    margin-right: -10%;
+  }
+
+  .join-meetup__heading {
+    margin-left: -10%;
+  }
+
+  .footer__links-stores,
+  .header__btn,
+  .events__heading-container a {
+    display: none;
+  }
+}

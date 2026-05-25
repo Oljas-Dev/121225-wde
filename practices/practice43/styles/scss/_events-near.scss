@@ -1,0 +1,112 @@
+@use "variables";
+
+.events {
+  gap: 4rem;
+
+  &__heading-container {
+    margin-bottom: 2.4rem;
+  }
+  &__heading {
+    align-items: center;
+    gap: 2.4rem;
+  }
+
+  &__region {
+    background-color: variables.$region-bg;
+    gap: 2.4rem;
+    padding: 1.2rem;
+    border-radius: 0.8rem;
+
+    p {
+      font-weight: 600;
+      font-size: 2rem;
+      line-height: 2.4rem;
+      letter-spacing: 0%;
+      color: rgba(0, 121, 138, 1);
+    }
+  }
+
+  a {
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: rgba(0, 121, 138, 1);
+  }
+
+  &__cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27.2rem, 1fr));
+    gap: 3.6rem;
+    width: 100%;
+  }
+
+  &__cards-info-container {
+    gap: 1.2rem;
+  }
+
+  &__card {
+    width: 100%;
+    gap: 1.2rem;
+    margin-bottom: 7.4rem;
+
+    &-venue {
+      gap: 0.8rem;
+    }
+
+    &-title {
+      font-weight: 600;
+      font-style: SemiBold;
+      font-size: 2rem;
+      line-height: 2.4rem;
+      letter-spacing: 0%;
+    }
+
+    &-distance {
+      font-weight: 500;
+      font-size: 1.4rem;
+      line-height: 2rem;
+      letter-spacing: 0%;
+      color: rgba(112, 112, 112, 1);
+    }
+
+    &-date-group {
+      gap: 0.6rem;
+    }
+
+    &-date {
+      text-transform: uppercase;
+    }
+
+    &-state {
+      gap: 1.58rem;
+
+      &-element {
+        align-items: center;
+        gap: 0.2rem;
+
+        img {
+          width: 2rem;
+          height: 2rem;
+        }
+
+        span {
+          width: fit-content;
+          font-weight: 400;
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+          letter-spacing: 0%;
+        }
+      }
+    }
+
+    &:hover {
+      border-bottom: 1px solid variables.$footer-border;
+    }
+
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+}
