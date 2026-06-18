@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.container select {
+  font-size: 24px;
+  background-color: #58b15f;
+  color: #fff;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 16px;
+}

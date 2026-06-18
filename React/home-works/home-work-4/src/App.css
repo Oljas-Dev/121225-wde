@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #114b05;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+body {
+  background-color: #6dd08c;
+}
+
+h2 {
+  font-family: inherit;
+  font-size: 48px;
+}
+
+h3 {
+  font-size: 32px;
+}
