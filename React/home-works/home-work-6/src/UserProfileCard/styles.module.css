@@ -1,0 +1,36 @@
+.container,
+.containerLoader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: rgb(186, 219, 136);
+  width: 50%;
+  height: 70vh;
+  text-align: center;
+  padding: 5rem 10rem;
+  box-shadow: 5px 5px 10px rgb(61, 60, 60, 0.3);
+  border-radius: 16px;
+  color: rgb(22, 35, 3);
+}
+
+.container {
+  justify-content: space-between;
+}
+
+.containerLoader {
+  justify-content: center;
+}
+
+.container button {
+  padding: 8px 12px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.container img {
+  width: 10rem;
+  height: 10rem;
+  border: 2px solid rgb(125, 156, 80);
+  border-radius: 50%;
+}
