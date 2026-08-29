@@ -1,0 +1,12 @@
+.posts {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.post {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}

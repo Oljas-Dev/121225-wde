@@ -1,0 +1,15 @@
+.post {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.post p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.post button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
