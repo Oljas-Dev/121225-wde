@@ -1,0 +1,35 @@
+.app {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+}
+
+.user {
+  padding: 20px;
+  margin-bottom: 30px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px;
+  cursor: pointer;
+}
