@@ -1,0 +1,7 @@
+.userItem {
+  list-style: none;
+  padding: 12px;
+  margin-bottom: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
