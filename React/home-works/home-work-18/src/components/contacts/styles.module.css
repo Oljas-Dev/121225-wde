@@ -1,0 +1,52 @@
+.contacts {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 40px;
+}
+
+.info {
+  flex: 1;
+}
+
+.info h1 {
+  margin-bottom: 20px;
+}
+
+.info ul {
+  padding: 0;
+  list-style: none;
+}
+
+.info li {
+  margin-bottom: 10px;
+}
+
+.info form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+  max-width: 400px;
+}
+
+.info input {
+  padding: 10px;
+}
+
+.info button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.socials img {
+  width: 40px;
+  height: 40px;
+}
